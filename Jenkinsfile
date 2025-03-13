@@ -12,10 +12,11 @@ pipeline{
                 sh 'npm install'
             }
         }
-        stage("docker image"){
-            steps{
-                sh 'docker build -t jenkin-container:1.0 .'
-            }
-        }
+       stage("docker image") {
+    steps {
+        sh 'sudo docker build -t jenkin-container:1.0 .'
+    }
+}
+
     }
 }
