@@ -5,7 +5,7 @@ FROM node:latest
 WORKDIR /apps
 
 # Copy package.json and package-lock.json first (to optimize caching)
-# COPY package*.json ./
+COPY package*.json ./
 
 # Install dependencies
 RUN npm install
