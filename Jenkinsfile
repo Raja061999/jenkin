@@ -27,5 +27,19 @@ pipeline{
                 }
             }
         }
+
+        stage("Deploy on Server") {
+    steps {
+        sh '''
+        ssh -i ~/.ssh/id_rsa user@your-server-ip <<EOF
+        docker pull sraja06/jenkin-container:1.0
+        docker stop my-app || true
+        docker rm my-app || true
+        docker run -d -p 3003:3003 --name my-app sraja06/jenkin-container:1.0
+        EOF
+        '''
+    }
+}
+
     }
 }
