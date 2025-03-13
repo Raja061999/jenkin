@@ -28,10 +28,10 @@ pipeline{
             }
         }
 
-        stage("Deploy on Server") {
+stage("Deploy on Server") {
     steps {
         sh '''
-        ssh -i ~/.ssh/id_rsa user@your-server-ip <<EOF
+        ssh -i ~/.ssh/id_rsa rajas@localhost <<EOF
         docker pull sraja06/jenkin-container:1.0
         docker stop my-app || true
         docker rm my-app || true
