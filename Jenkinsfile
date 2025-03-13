@@ -12,9 +12,9 @@ pipeline{
                 sh 'npm install'
             }
         }
-        stage("build"){
+        stage("docker image"){
             steps{
-                sh 'npm run build'
+                sh 'docker build -t jenkin-container:1.0 .'
             }
         }
     }
