@@ -52,7 +52,6 @@ pipeline {
                 sudo docker stop my-app || true
                 sudo docker rm my-app || true
                 sudo docker run -d --restart always -p 3003:3003 --name my-app $DOCKER_REPO
-                EOF
                 '''
             }
         }
