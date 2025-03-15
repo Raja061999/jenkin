@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-    res.send("hello world this is aws");
+    res.send("hello world this is aws test1");
 });
 
 const PORT = 3003;
